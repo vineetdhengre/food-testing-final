@@ -1,3 +1,6 @@
+// this form is for open form and also for nav bar contact form
+
+
 $(document).ready(function () {
     $("#form_lead2").on("submit", function (e) {
     e.preventDefault();
@@ -25,7 +28,7 @@ $(document).ready(function () {
         processData: false,
         success: function (data) {
             // console.log(data.response);
-            window.location.replace("../../Thank-you.html");
+            window.location.replace("../../thank-you.html");
         },
         contentType: "application/json",
         dataType: "json",
@@ -87,7 +90,7 @@ function Validate(){
     if((NameErr || EmailErr || NumberErr)  == true) {
         return false;
     } else { 
-        window.location.href="Thank-you.html"
+        window.location.href="thank-you.html"
     }
 
 }

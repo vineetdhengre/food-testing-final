@@ -1,15 +1,15 @@
-// this form is for popup
-
+// this form is for leadmagnets of top 5
+ 
 
 $(document).ready(function () {
-    $("#form_lead").on("submit", function (e) {
+    $("#form_leadmagnet").on("submit", function (e) {
     e.preventDefault();
 
     //$('#testkk').on('click', function () {
-    var name = $("#name").val();
-    var email = $("#email").val();
-    var mobile = $("#mobile").val();
-    var LEAD_SOURCE_ID = $("#LEAD_ID").val();
+    var name = $("#nameleadmagnet").val();
+    var email = $("#emailleadmagnet").val();
+    var mobile = $("#mobileleadmagnet").val();
+    var LEAD_SOURCE_ID = $("#LEAD_MAGNET_ID").val();
     var data = {
         NAME: name,
         EMAIL: email,
@@ -29,7 +29,7 @@ $(document).ready(function () {
         processData: false,
         success: function (data) {
             // console.log(data.response);
-            window.location.replace("../../thank-you.html");
+            window.location.replace("../../deadly-organism-thankyou.html");
         },
         contentType: "application/json",
         dataType: "json",
@@ -40,11 +40,11 @@ $(document).ready(function () {
 
 // console.log("this is foodtesting working");
 
-    function validation(){
-    var name = document.EnquiryForm.name.value;
-    var email = document.EnquiryForm.email.value;
+    function validLead(){
+    var name = document.EnquiryFormLead.nameleadmagnet.value;
+    var email = document.EnquiryFormLead.emailleadmagnet.value;
     // var company_name = document.EnquiryForm.company.value;
-    var contact = document.EnquiryForm.phone.value;
+    var contact = document.EnquiryFormLead.mobileleadmagnet.value;
 
     // console.log(name, email,  contact);
 
@@ -109,7 +109,7 @@ $(document).ready(function () {
     if((nameErr || emailErr || mobileErr) == true) {
         return false;
     } else { 
-        window.location.href="thank-you.html"
+        window.location.href="deadly-organism-thankyou.html "
     }
 }
 
