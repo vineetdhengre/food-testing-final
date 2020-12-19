@@ -6,36 +6,47 @@ $(document).ready(function () {
     e.preventDefault();
 
     //$('#testkk').on('click', function () {
-    var name = $("#pdfname").val();
-    var email = $("#pdfemail").val();
-    var mobile = $("#pdfphone").val();
-    var LEAD_SOURCE_ID = $("#LEAD_MAGNET_ID").val();
-    var data = {
-        NAME: name,
-        EMAIL: email,
-        MOBILE: mobile,
-        LEAD_SOURCE_ID: LEAD_SOURCE_ID,
-    };
-
-    var jsondata = JSON.stringify(data);
-
-    // console.log(jsondata);
-
-        $.ajax({
-        type: "POST",
-        url: "https://crm.equinoxlab.com/api/Lead_Management.svc/Insert_Lead",
-        data: jsondata,
-        async: false,
-        processData: false,
-        success: function (data) {
-            // console.log(data.response);
-            window.location.replace("../../deadly-organism-thankyou.html");
-        },
-        contentType: "application/json",
-        dataType: "json",
-        });
+       
     });
+
+    
 });
+
+function LeadCatch () {
+    if(validLead()===false)
+    {
+
+        var name = $("#pdfname").val();
+        var email = $("#pdfemail").val();
+        var mobile = $("#pdfphone").val();
+        var LEAD_SOURCE_ID = $("#LEAD_MAGNET_ID").val();
+        var data = {
+            NAME: name,
+            EMAIL: email,
+            MOBILE: mobile,
+            LEAD_SOURCE_ID: LEAD_SOURCE_ID,
+        };
+        
+        var jsondata = JSON.stringify(data);
+        
+        // console.log(jsondata);
+        
+        $.ajax({
+            type: "POST",
+            url: "http://crm.equinoxlab.com/api/Lead_Management.svc/Insert_Lead",
+            data: jsondata,
+            async: false,
+            processData: false,
+            success: function (data) {
+                //console.log(data);
+                window.location.replace("../../deadly-organism-thankyou.html");
+            },
+            contentType: "application/json",
+            dataType: "json",
+        });
+    }
+}
+
 
 
 // console.log("this is foodtesting working");
@@ -43,7 +54,6 @@ $(document).ready(function () {
     function validLead(){
     var Name = document.LeadEnquiryForm.pdfname.value;
     var Email = document.LeadEnquiryForm.pdfemail.value;
-    // var company_name = document.EnquiryForm.company.value;
     var Contact = document.LeadEnquiryForm.pdfphone.value;
 
     // console.log(name, email,  contact);
@@ -94,54 +104,13 @@ $(document).ready(function () {
         }
     }
 
-    // // Validate company name field
-    // if(company_name == ''){
-    //     document.getElementById('companyErr').innerHTML = "Please enter your company name";
-    // } else {
-    //     var regex = /^[a-zA-Z\s]+$/;                
-    //     if(regex.test(company_name) === false) {
-    //         document.getElementById('companyErr').innerHTML = "Please enter a valid company name";
-    //     } else {
-    //         document.getElementById('companyErr').innerHTML = "";
-    //         companyErr = false;
-    //     }
-    // }
-
-
 
     // Checking all fields
-    if((nameErr || emailErr || mobileErr) == true) {
+    if((nameErr || emailErr || mobileErr) === false) {
         return false;
-    } else { 
-        window.location.href="deadly-organism-thankyou.html "
-    }
+    } 
+    // else { 
+    //     window.location.href="deadly-organism-thankyou.html "
+    // }
 }
 
-
-
-
- // New function form
-
- /* function setError(id, error) {
-    element = document.getElementById(id);
-    element = document.getElementsByClassName('error')[0].innerHTML = error;
-
- }
-
- function leadmagnet () {
-     var returnthevalue = true;
-
-     // perform validation and if validation fails, set the value of returnthevalue(variable) to false
-     var name = document.forms["EnquiryForm"]["name"].value
-     if (name.length < 5) {
-         setError("name" , "Too Short");
-         returnthevalue = false;
-     }
-     
-
-
-
-
-     return returnthevalue;
- }
- */
