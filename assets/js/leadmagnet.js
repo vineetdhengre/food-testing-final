@@ -40,7 +40,7 @@ $(document).ready(function () {
 
 // console.log("this is foodtesting working");
 
-    function validLead(){
+/*     function validLead(){
     var name = document.EnquiryFormLead.namelead.value;
     var email = document.EnquiryFormLead.emailleadmagnet.value;
     // var company_name = document.EnquiryForm.company.value;
@@ -112,4 +112,4 @@ $(document).ready(function () {
         window.location.href="deadly-organism-thankyou.html "
     }
 }
-
+ */

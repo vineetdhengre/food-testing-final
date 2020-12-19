@@ -36,6 +36,7 @@ $(document).ready(function () {
     });
 });
 
+
 function Validate(){
     var Name = document.EnquiryForm2.name1.value;
     var Email = document.EnquiryForm2.email1.value;
