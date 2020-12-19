@@ -4,12 +4,9 @@
 $(document).ready(function () {
     $("#form_leadmagnet").on("submit", function (e) {
     e.preventDefault();
-
-    //$('#testkk').on('click', function () {
-       
+ 
     });
 
-    
 });
 
 function LeadCatch () {
@@ -33,7 +30,7 @@ function LeadCatch () {
         
         $.ajax({
             type: "POST",
-            url: "http://crm.equinoxlab.com/api/Lead_Management.svc/Insert_Lead",
+            url: "http://crm.equinoxlab.com/api/Lead_Management.svc/Insert_Lead/: splat 200!",
             data: jsondata,
             async: false,
             processData: false,
