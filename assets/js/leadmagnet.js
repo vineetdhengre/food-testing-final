@@ -6,7 +6,7 @@ $(document).ready(function () {
     e.preventDefault();
 
     //$('#testkk').on('click', function () {
-    var name = $("#nameleadmagnet").val();
+    var name = $("#namelead").val();
     var email = $("#emailleadmagnet").val();
     var mobile = $("#mobileleadmagnet").val();
     var LEAD_SOURCE_ID = $("#LEAD_MAGNET_ID").val();
@@ -41,7 +41,7 @@ $(document).ready(function () {
 // console.log("this is foodtesting working");
 
     function validLead(){
-    var name = document.EnquiryFormLead.nameleadmagnet.value;
+    var name = document.EnquiryFormLead.namelead.value;
     var email = document.EnquiryFormLead.emailleadmagnet.value;
     // var company_name = document.EnquiryForm.company.value;
     var contact = document.EnquiryFormLead.mobileleadmagnet.value;
