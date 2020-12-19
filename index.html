@@ -367,16 +367,16 @@
                 </div>
 
                 <div class="modal-body">
-                    <form name="EnquiryForm" id="form_leadmagnet">
+                    <form name="LeadEnquiryForm" id="form_leadmagnet" >
                         <div class="form-group">
                             <label for="name"> Full Name</label>
-                            <input type="text" class="form-control" id="namelead" name="name" placeholder="Name">
+                            <input type="text" class="form-control " id="pdfname" name="name" placeholder="Name">
                             <div class="error" id="nameErr"></div>
                         </div>
 
                         <div class="form-group">
                             <label for="email"> Email address</label>
-                            <input type="email" class="form-control" id="emailleadmagnet" name="email"
+                            <input type="email" class="form-control" id="pdfemail" name="email"
                                 aria-describedby="emailHelp" placeholder="Mail ID">
                             <div class="error" id="emailErr"></div>
                         </div>
@@ -389,7 +389,7 @@
 
                         <div class="form-group">
                             <label for="contactNumber"> Contact Number </label>
-                            <input type="text" class="form-control" id="mobileleadmagnet" name="phone" placeholder="Phone No">
+                            <input type="text" class="form-control" id="pdfphone" name="phone" placeholder="Phone No">
                             <div class="error" id="mobileErr"></div>
                         </div>
 
@@ -397,7 +397,7 @@
                             <input type="hidden" id="LEAD_MAGNET_ID" name="LEAD_SOURCE_ID"
                                 value="b8bb2ad3-986a-4b04-b09a-0446375f0c3b" />
                         </div>
-                        <button class="btn" onclick="return validLead() " type="submit" id="modal-submit">
+                        <button class="btn" onclick="return leadmagnet() " type="submit" id="modal-submit">
                             Submit</button>
                     </form>
                 </div>

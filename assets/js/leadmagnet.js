@@ -6,9 +6,9 @@ $(document).ready(function () {
     e.preventDefault();
 
     //$('#testkk').on('click', function () {
-    var name = $("#namelead").val();
-    var email = $("#emailleadmagnet").val();
-    var mobile = $("#mobileleadmagnet").val();
+    var name = $("#pdfname").val();
+    var email = $("#pdfemail").val();
+    var mobile = $("#pdfphone").val();
     var LEAD_SOURCE_ID = $("#LEAD_MAGNET_ID").val();
     var data = {
         NAME: name,
@@ -40,11 +40,11 @@ $(document).ready(function () {
 
 // console.log("this is foodtesting working");
 
-/*     function validLead(){
-    var name = document.EnquiryFormLead.namelead.value;
-    var email = document.EnquiryFormLead.emailleadmagnet.value;
+    function validLead(){
+    var Name = document.LeadEnquiryForm.pdfname.value;
+    var Email = document.LeadEnquiryForm.pdfemail.value;
     // var company_name = document.EnquiryForm.company.value;
-    var contact = document.EnquiryFormLead.mobileleadmagnet.value;
+    var Contact = document.LeadEnquiryForm.pdfphone.value;
 
     // console.log(name, email,  contact);
 
@@ -52,15 +52,45 @@ $(document).ready(function () {
     var nameErr = emailErr = mobileErr = true;
 
     // Validate name field
-    if(name == ''){
+    if(Name == ''){
         document.getElementById('nameErr').innerHTML = "Please enter a name";
     } else {
         var regex = /^[a-zA-Z\s]+$/;                
-        if(regex.test(name) === false) {
+        if(regex.test(Name) === false) {
             document.getElementById('nameErr').innerHTML = "Please enter a valid name";
         } else {
             document.getElementById('nameErr').innerHTML = "";
             nameErr = false;
+        }
+    }
+
+    
+    
+    // Validate email address
+    if(Email == "") {
+        document.getElementById('emailErr').innerHTML = "Please enter your email address";
+    } else {
+        // Regular expression for basic email validation
+        var regex = /^\S+@\S+\.\S+$/;
+        if(regex.test(Email) === false) {
+            document.getElementById('emailErr').innerHTML = "Please enter a valid email address" 
+        } else{
+            document.getElementById('emailErr').innerHTML = "";
+            emailErr = false;
+        }
+    }
+
+
+    // Validate mobile number
+    if(Contact == "") {
+        document.getElementById('mobileErr').innerHTML = "Enter your number";
+    } else {
+        var regex = /^[1-9]\d{9}$/;
+        if(regex.test(Contact) === false) {
+            document.getElementById('mobileErr').innerHTML = "Please enter a valid 10 digit number";
+        } else {
+            document.getElementById('mobileErr').innerHTML = "";
+            mobileErr = false;
         }
     }
 
@@ -77,32 +107,6 @@ $(document).ready(function () {
     //     }
     // }
 
-    // Validate mobile number
-    if(contact == "") {
-        document.getElementById('mobileErr').innerHTML = "Enter your number";
-    } else {
-        var regex = /^[1-9]\d{9}$/;
-        if(regex.test(contact) === false) {
-            document.getElementById('mobileErr').innerHTML = "Please enter a valid 10 digit number";
-        } else {
-            document.getElementById('mobileErr').innerHTML = "";
-            mobileErr = false;
-        }
-    }
-
-    // Validate email address
-    if(email == "") {
-        document.getElementById('emailErr').innerHTML = "Please enter your email address";
-    } else {
-        // Regular expression for basic email validation
-        var regex = /^\S+@\S+\.\S+$/;
-        if(regex.test(email) === false) {
-            document.getElementById('emailErr').innerHTML = "Please enter a valid email address" 
-        } else{
-            document.getElementById('emailErr').innerHTML = "";
-            emailErr = false;
-        }
-    }
 
 
     // Checking all fields
@@ -112,4 +116,32 @@ $(document).ready(function () {
         window.location.href="deadly-organism-thankyou.html "
     }
 }
+
+
+
+
+ // New function form
+
+ /* function setError(id, error) {
+    element = document.getElementById(id);
+    element = document.getElementsByClassName('error')[0].innerHTML = error;
+
+ }
+
+ function leadmagnet () {
+     var returnthevalue = true;
+
+     // perform validation and if validation fails, set the value of returnthevalue(variable) to false
+     var name = document.forms["EnquiryForm"]["name"].value
+     if (name.length < 5) {
+         setError("name" , "Too Short");
+         returnthevalue = false;
+     }
+     
+
+
+
+
+     return returnthevalue;
+ }
  */
