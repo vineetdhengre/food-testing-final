@@ -30,7 +30,7 @@ function LeadCatch () {
         
         $.ajax({
             type: "POST",
-            url: "crm.equinoxlab.com/api/Lead_Management.svc/Insert_Lead",
+            url: "//crm.equinoxlab.com/api/Lead_Management.svc/Insert_Lead",
             data: jsondata,
             async: false,
             processData: false,
